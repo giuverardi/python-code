@@ -1,4 +1,4 @@
-# crezione quadrato magico
+# creazione quadrato magico
 # vincoli da ricordare: la matrice è quadrata, la somma di ogni riga, colonna e diagonale è un numero detto
 # numero magico
 # il prodotto del numero magico con l'ordine della matrice dà la somma degli elementri tra di loro
