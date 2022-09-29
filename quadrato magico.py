@@ -31,3 +31,17 @@ MagicNumber = SommaElementi/row
 print(m)
 print(list_number)
 print('Il numero magico della matrice', row, 'x', row, 'è', MagicNumber)
+
+col, row = 3, 3
+
+# cc è la colonna centrale
+cc = int((col - 1) / 2)
+
+# create matrix with zero elements
+m = np.zeros((row, col))
+
+m[0, cc] = 1
+m[row - 1, cc + 1] = 2
+m[row - 1, cc + 1] = 2
+
+print(m)
