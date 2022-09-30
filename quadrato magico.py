@@ -7,41 +7,36 @@
 
 import numpy as np
 
-# creiamo la lista vuota che conterrà l'elenco dei numeri della matrice
-list_number = []
-
-row = int(input('Inserisci il numero di righe per creare la matrice quadrata superiore a zero: '))
-col = row
+# chiediamo all'utente di inserire l'ordine della matrice
+N = int(input('Inserisci il numero di righe per creare la matrice quadrata superiore a zero: '))
 
 # create matrix with zero elements
-m=np.zeros((row, col))
+magic_square = np.zeros((N,N), dtype = int)
+
+# inizializziamo le variabili n per inserire i valori da 1 a N**2
+# inizializziamo i e j per muoverci sulla matrice
+n = 1
+i, j = 0, N//2
 
 # doppio ciclo per trasformare gli elementi della matrice da 0 a 1
 a = 1
 SommaElementi = 0
 
-for y in range(col):
-    for x in range(row):
-        SommaElementi=SommaElementi + a
-        list_number.append(a)
-        a = a + 1
+for x in range(N**2):
+    SommaElementi = SommaElementi + a
+    a = a + 1
 
-MagicNumber = SommaElementi/row
+MagicNumber = SommaElementi / N
 
-print(m)
-print(list_number)
-print('Il numero magico della matrice', row, 'x', row, 'è', MagicNumber)
+print('Il numero magico della matrice', N, 'x', N, 'è', MagicNumber)
 
-col, row = 3, 3
+while n <= N**2:
+    magic_square[i, j] = n
+    n += 1
+    newi, newj = (i-1) % N, (j+1) % N
+    if magic_square[newi, newj]:
+        i += 1
+    else:
+        i, j = newi, newj
 
-# cc è la colonna centrale
-cc = int((col - 1) / 2)
-
-# create matrix with zero elements
-m = np.zeros((row, col))
-
-m[0, cc] = 1
-m[row - 1, cc + 1] = 2
-m[row - 1, cc + 1] = 2
-
-print(m)
+print(magic_square)
