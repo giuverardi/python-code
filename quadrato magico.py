@@ -30,6 +30,7 @@ MagicNumber = SommaElementi / N
 
 print('Il numero magico della matrice', N, 'x', N, 'è', MagicNumber)
 
+# Create an N x N magic square. N must be odd.
 while n <= N**2:
     magic_square[i, j] = n
     n += 1
