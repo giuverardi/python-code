@@ -8,7 +8,7 @@
 import numpy as np
 
 # chiediamo all'utente di inserire l'ordine della matrice
-N = int(input('Inserisci il numero di righe per creare la matrice quadrata superiore a zero: '))
+N = int(input('Inserisci un numero dispari per il numero di righe della matrice quadrata: '))
 
 # create matrix with zero elements
 magic_square = np.zeros((N,N), dtype = int)
